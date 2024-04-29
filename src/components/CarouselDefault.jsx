@@ -50,6 +50,15 @@ const responsive = {
 const CarouselWithNames = () => {
   return (
     <div className="py-[4%] px-[6%] ">
+      <div className="flex justify-between py-6 items-center">
+        <div></div>
+        <div className="font-['nantes'] text-2xl">Keep exploring</div>
+        <div>
+          <a href="/" className="underline">
+            All Brands
+          </a>
+        </div>
+      </div>
       <Carousel
         swipeable={true}
         draggable={false}
@@ -70,8 +79,8 @@ const CarouselWithNames = () => {
         {images.map((image, index) => (
           <div key={index} className="px-2">
             <img src={image.src} alt={image.alt} />
-            <div className="flex items-center py-2">
-              <a href="" className="underline">
+            <div className="flex justify-center py-2">
+              <a href="/" className="underline">
                 <p>{image.alt}</p>
               </a>
             </div>

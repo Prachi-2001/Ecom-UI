@@ -1,6 +1,7 @@
 import React from "react";
 import Qna from "./Qna";
-import { nav } from "../assets/data";
+import { nav, listItems } from "../assets/data";
+
 const Footer = () => {
   return (
     <>
@@ -16,7 +17,7 @@ const Footer = () => {
           <Qna />
         </div>
       </div>
-      <div className="bg-[#595540]  text-[#FFFFFF] py-[4%] px-[32%] flex flex-col h-[35%] justify-between items-center">
+      <div className="bg-[#595540]  text-[#FFFFFF] py-[4%] px-4 flex flex-col h-[35%] justify-between items-center">
         <div className="font-['nantes'] flex flex-col item-center justify-center font-[400] text-[45px] leading-snug tracking-normal	">
           <div> Ready to start buying</div>
         </div>
@@ -54,7 +55,7 @@ const Footer = () => {
           </ul>
         </div>
         <div>
-          <button className="bg-white text-[#333333] px-10 py-3 mt-2">
+          <button className="bg-white text-[#333333] px-5 py-2 sm:px-10 sm:py-3 mt-2">
             Sign up to Shop
           </button>
         </div>
@@ -74,8 +75,8 @@ const Footer = () => {
         </p>
       </div>
       <hr />
-      <div className="flex py-[4%] px-[6%] justify-between">
-        <div className="flex">
+      <div className="flex md:flex-row flex-col py-[4%] px-[6%] justify-between">
+        <div className="flex sm:flex-row flex-col">
           {Object.keys(nav).map((section, index) => (
             <div key={index} className="flex flex-col mr-8">
               <h4 className="font-semibold mb-4">{section}</h4>
@@ -89,10 +90,11 @@ const Footer = () => {
             </div>
           ))}
         </div>
-        <div className="flex flex-col w-[30%] justify-between">
+        <div className="flex flex-col justify-between">
           <div className="font-['nantes'] text-2xl">Get the Faire app</div>
           <div>
-            Shop on the go, message brands, and track orders with the Faire app.
+            <p>Shop on the go, message brands, and track</p>
+            <p>orders with the Faire app.</p>
           </div>
           <div className="flex items-center">
             <div>
@@ -120,23 +122,14 @@ const Footer = () => {
       <div className="py-[4%] px-[6%]">
         <span>&copy;2024 </span> Faire Wholesale, Inc.
         <div>
-          <ul className="flex w-[50%] justify-between">
-            <a href="">
-              <li>Terms of Service</li>
-            </a>
-            <a href="">
-              <li className="list-disc">Privacy Policy</li>
-            </a>
-            <a href="">
-              <li className="list-disc">Cookie Policy</li>
-            </a>
-            <a href="">
-              <li className="list-disc">IP Policy</li>
-            </a>
-            <a href="">
-              {" "}
-              <li className="list-disc ">Sitemap</li>
-            </a>
+          <ul className="flex flex-wrap">
+            {listItems.map((item, index) => (
+              <a href={item.url} key={index}>
+                <li className={index > 0 ? "list-disc ml-6" : ""}>
+                  {item.text}
+                </li>
+              </a>
+            ))}
           </ul>
         </div>
       </div>

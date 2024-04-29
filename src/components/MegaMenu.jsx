@@ -12,6 +12,7 @@ const MegaMenu = ({ tabs }) => {
 
   const handleMouseLeave = () => {
     setShowMenu(false);
+    setCurrentTab(null); // Reset currentTab when leaving mega menu
   };
 
   return (
@@ -20,7 +21,9 @@ const MegaMenu = ({ tabs }) => {
         {Object.keys(tabs).map((tabName) => (
           <div
             key={tabName}
-            className="hover:bg-gray-200 p-2 cursor-pointer"
+            className={`p-2 cursor-pointer ${
+              currentTab === tabName ? "underline" : ""
+            }`}
             onMouseEnter={() => handleMouseEnter(tabName)}
           >
             {tabName}

@@ -1,19 +1,16 @@
 import { useState } from "react";
-
+import Main from "./page/Main";
 import "./App.css";
-import Navbar from "./components/Navbar";
-import HeroSection from "./components/HeroSection";
-import Footer from "./components/Footer";
-import CarouselDefault from "./components/CarouselDefault";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 function App() {
   return (
-    <>
-      <Navbar />
-      <HeroSection />
-      <CarouselDefault />
-      <Footer />
-    </>
+    <div>
+      <Routes>
+        <Route path="/all-european-brands" element={<Main />} />
+        <Route path="/" element={<Main />} />
+      </Routes>
+    </div>
   );
 }
 
