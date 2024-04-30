@@ -25,3 +25,7 @@ cd path_where_package.json_exists
 npm install --legacy-peer-deps
 npm run dev
 ```
+
+## Live website
+
+[EcomUI](https://faire-misiki.netlify.app/)
