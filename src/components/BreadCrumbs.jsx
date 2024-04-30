@@ -6,7 +6,7 @@ const BreadCrumbs = () => {
   const pathnames = location.pathname.split("/").filter((x) => x);
 
   return (
-    <nav className="text-gray-500 my-4 px-2">
+    <nav className="text-gray-500 my-4 px-4">
       <ol className="flex">
         <li className="">
           <Link to="/" className="hover:text-gray-700 hover:underline">

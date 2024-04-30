@@ -4,7 +4,7 @@ import { tabs } from "../assets/data";
 import { IoIosSearch, IoMdMenu } from "react-icons/io";
 import { RxCross2 } from "react-icons/rx";
 
-const Navbar = ({ sidebarContent }) => {
+const Navbar = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
@@ -26,53 +26,55 @@ const Navbar = ({ sidebarContent }) => {
           </div>
         </div>
 
-        <div className="flex justify-between w-[100%] p-4 items-center">
-          <div className="flex w-[60%] justify-between items-center mx-5">
-            <div className="md:hidden">
-              <IoMdMenu
-                size={24}
-                className="text-gray-500 cursor-pointer"
-                onClick={toggleSidebar}
+        <div className="w-[100%] sticky top-0 bg-white">
+          <div className="flex justify-between w-[100%] p-4 items-center">
+            <div className="flex w-[60%] justify-between items-center mx-5">
+              <div className="md:hidden">
+                <IoMdMenu
+                  size={24}
+                  className="text-gray-500 cursor-pointer"
+                  onClick={toggleSidebar}
+                />
+              </div>
+              <img
+                src="https://cdn.faire.com/static/logo.svg"
+                alt=""
+                className="cursor-pointer w-[80px] sm:w-[80px] md:w-[90px]"
               />
-            </div>
-            <img
-              src="https://cdn.faire.com/static/logo.svg"
-              alt=""
-              className="cursor-pointer w-[80px] sm:w-[80px] md:w-[90px]"
-            />
-            <div className="relative md:w-[75%] sm:w-[65%] sm:block hidden">
-              <input
-                type="text"
-                placeholder="Search products or brands"
-                className="md:px-4 md:py-2 px-1  py-1 w-full rounded-full outline selection:none"
-              />
-              <IoIosSearch
-                size={20}
-                className="absolute top-0 right-3 mt-3 text-gray-400 cursor-pointer"
-              />
-            </div>
-          </div>
-          <div className="flex justify-between items-center ml-2 w-[40%]">
-            <div className="hidden lg:block w-[60%]">
-              <div className="flex justify-between">
-                <div>EN-US</div>
-                <div>|</div>
-                <div>Blog</div>
-                <div>Sell on Faire</div>
-                <div>Sign In</div>
+              <div className="relative md:w-[75%] sm:w-[65%] sm:block hidden">
+                <input
+                  type="text"
+                  placeholder="Search products or brands"
+                  className="md:px-4 md:py-2 px-1  py-1 w-full rounded-full outline selection:none"
+                />
+                <IoIosSearch
+                  size={20}
+                  className="absolute top-0 right-3 mt-3 text-gray-400 cursor-pointer"
+                />
               </div>
             </div>
-            <div></div>
-            {/* Hidden on screens smaller than md */}
-            <div className=" bg-black text-white px-1 py-1 sm:px-4 sm:py-2">
-              <button className=" text-sm">Sign Up to Shop</button>
+            <div className="flex justify-between items-center ml-2 w-[40%]">
+              <div className="hidden lg:block w-[60%]">
+                <div className="flex justify-between">
+                  <div>EN-US</div>
+                  <div>|</div>
+                  <div>Blog</div>
+                  <div>Sell on Faire</div>
+                  <div>Sign In</div>
+                </div>
+              </div>
+              <div></div>
+              {/* Hidden on screens smaller than md */}
+              <div className=" bg-black text-white px-1 py-1 sm:px-4 sm:py-2">
+                <button className=" text-sm">Sign Up to Shop</button>
+              </div>
             </div>
           </div>
-        </div>
-        <div className="hidden md:block">
-          {/* Show MegaMenu on medium and larger screens */}
-          <div className="flex justify-center">
-            <MegaMenu tabs={tabs} />
+          <div className="hidden md:block">
+            {/* Show MegaMenu on medium and larger screens */}
+            <div className="flex justify-center">
+              <MegaMenu tabs={tabs} />
+            </div>
           </div>
         </div>
       </div>

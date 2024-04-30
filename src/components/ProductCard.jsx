@@ -29,11 +29,11 @@ function ProductCard({ name, images, ratings }) {
         className="w-full h-[75%] bg-center bg-cover duration-500"
       ></div>
       {/* Left Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] left-2 text-2xl  p-2 bg-white/40 text-black cursor-pointer">
+      <div className="hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] left-2 text-2xl  p-2 bg-white/40 text-black cursor-pointer">
         <BsChevronCompactLeft onClick={prevSlide} size={30} />
       </div>
       {/* Right Arrow */}
-      <div className="hidden group-hover:block absolute top-[50%] -translate-x-0 translate-y-[-50%] right-2 text-2xl  p-2 bg-white/40 text-black cursor-pointer">
+      <div className="hidden group-hover:block absolute top-[40%] -translate-x-0 translate-y-[-50%] right-2 text-2xl  p-2 bg-white/40 text-black cursor-pointer">
         <BsChevronCompactRight onClick={nextSlide} size={30} />
       </div>
       <div>
